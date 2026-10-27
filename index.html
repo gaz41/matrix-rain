@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-1.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>MATRIX RAIN</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="menu-toggle" id="menuToggle">&#9776;</div>
+        <div class="matrix-rain-name">
+          Matrix Rain
+          <div id="unicodeName"></div>
+        </div>
+      </header>
+
+      <main>
+        <div class="sliding-menu" id="slidingMenu">
+          <h2>Settings</h2>
+          <div id="selectContainer">
+            <label for="selectUnicode" id="labelSelect"
+              >Unicode Block Name</label
+            >
+            <select id="selectUnicode">
+              <option value="" disabled>
+                Select unicode name to display ...
+              </option>
+              <option value="1">Basic Latin</option>
+              <option value="2">Latin-1 Supplement</option>
+              <option value="3">Latin Extended-A</option>
+              <option value="4">Latin Extended-B</option>
+              <option value="5">IPA Extensions</option>
+              <option value="6">Spacing Modifier Letters</option>
+              <option value="7">Combining Diacritical Marks</option>
+              <option value="8" selected>Greek</option>
+              <option value="9">Cyrillic</option>
+              <option value="10">Armenian</option>
+              <option value="11">Hebrew</option>
+              <option value="12">Arabic</option>
+              <option value="13">Syriac</option>
+              <option value="14">Thaana</option>
+              <option value="15">Devanagari</option>
+              <option value="16">Bengali</option>
+              <option value="17">Gurmukhi</option>
+              <option value="18">Gujarati</option>
+              <option value="19">Oriya</option>
+              <option value="20">Tamil</option>
+              <option value="21">Telugu</option>
+              <option value="22">Kannada</option>
+              <option value="23">Malayalam</option>
+              <option value="24">Sinhala</option>
+              <option value="25">Thai</option>
+              <option value="26">Lao</option>
+              <option value="27">Tibetan</option>
+              <option value="28">Myanmar</option>
+              <option value="29">Georgian</option>
+              <option value="30">Hangul Jamo</option>
+              <option value="31">Ethiopic</option>
+              <option value="32">Cherokee</option>
+              <option value="33">Unified Canadian Aboriginal Syllabics</option>
+              <option value="34">Ogham</option>
+              <option value="35">Runic</option>
+              <option value="36">Khmer</option>
+              <option value="37">Mongolian</option>
+              <option value="38">Latin Extended Additional</option>
+              <option value="39">Greek Extended</option>
+              <option value="40">General Punctuation</option>
+              <option value="41">Superscripts and Subscripts</option>
+              <option value="42">Currency Symbols</option>
+              <option value="43">Combining Marks for Symbols</option>
+              <option value="44">Letterlike Symbols</option>
+              <option value="45">Number Forms</option>
+              <option value="46">Arrows</option>
+              <option value="47">Mathematical Operators</option>
+              <option value="48">Miscellaneous Technical</option>
+              <option value="49">Control Pictures</option>
+              <option value="50">Optical Character Recognition</option>
+              <option value="51">Enclosed Alphanumerics</option>
+              <option value="52">Box Drawing</option>
+              <option value="53">Block Elements</option>
+              <option value="54">Geometric Shapes</option>
+              <option value="55">Miscellaneous Symbols</option>
+              <option value="56">Dingbats</option>
+              <option value="57">Braille Patterns</option>
+              <option value="58">CJK Radicals Supplement</option>
+              <option value="59">Kangxi Radicals</option>
+              <option value="60">Ideographic Description Characters</option>
+              <option value="61">CJK Symbols and Punctuation</option>
+              <option value="62">Hiragana</option>
+              <option value="63">Katakana</option>
+              <option value="64">Bopomofo</option>
+              <option value="65">Hangul Compatibility Jamo</option>
+              <option value="66">Kanbun</option>
+              <option value="67">Bopomofo Extended</option>
+              <option value="68">Enclosed CJK Letters and Months</option>
+              <option value="69">CJK Compatibility</option>
+              <option value="70">CJK Unified Ideographs Extension A</option>
+              <option value="71">CJK Unified Ideographs</option>
+              <option value="72">Yi Syllables</option>
+              <option value="73">Yi Radicals</option>
+              <option value="74">Hangul Syllables</option>
+              <option value="75">High Surrogates</option>
+              <option value="76">High Private Use Surrogates</option>
+              <option value="77">Low Surrogates</option>
+              <option value="78">Private Use</option>
+              <option value="79">CJK Compatibility Ideographs</option>
+              <option value="80">Alphabetic Presentation Forms</option>
+              <option value="81">Arabic Presentation Forms-A</option>
+              <option value="82">Combining Half Marks</option>
+              <option value="83">CJK Compatibility Forms</option>
+              <option value="84">Small Form Variants</option>
+              <option value="85">Arabic Presentation Forms-B</option>
+              <option value="86">Specials</option>
+              <option value="87">Halfwidth and Fullwidth Forms</option>
+              <option value="88">Specials</option>
+            </select>
+          </div>
+
+          <!-- refresh rate -->
+          <div class="slidecontainer">
+            <p>Matrix Refesh Rate: <span id="refresh"></span></p>
+
+            <div class="slider-select">
+              <div class="slider-text">faster</div>
+              <div class="slider-text">slower</div>
+            </div>
+
+            <input
+              type="range"
+              min="1"
+              max="250"
+              value="60"
+              class="slider"
+              id="refreshRate"
+            />
+          </div>
+
+          <button id="resetBtn">reset</button>
+        </div>
+
+        <!-- canvas output -->
+        <div id="output"></div>
+      </main>
+
+      <!-- copyright info -->
+      <footer>
+        <div id="copy" class="copy"></div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- Resources -->
+<!-- adapted from: Ganesh Prasad -->
+<!-- https://dev.to/gnsp/making-the-matrix-effect-in-javascript-din // -->
+<!-- https://codepen.io/gnsp/pen/vYBQZJm -->
+
+<!-- https://www.ssec.wisc.edu/~tomw/java/unicode.html -->
+<!-- https://symbl.cc/en/unicode/blocks/ -->
+<!-- https://en.wikipedia.org/wiki/Unicode_block -->
